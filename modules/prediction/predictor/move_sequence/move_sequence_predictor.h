@@ -76,7 +76,8 @@ class MoveSequencePredictor : public SequencePredictor {
       const Obstacle& obstacle, const LaneSequence& lane_sequence);
 
   std::pair<double, double> ComputeLonEndState(
-      const Obstacle& obstacle, const LaneSequence& lane_sequence);
+      const std::array<double, 3>& init_s,
+      const LaneSequence& lane_sequence);
 
   double Cost(const double t, const std::array<double, 6>& lateral_coeffs,
               const std::array<double, 5>& longitudinal_coeffs);
